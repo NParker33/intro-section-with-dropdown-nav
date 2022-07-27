@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Intro Section with Navigation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <span class="nav__logo"><img src="images/logo.svg" alt="Snap logo" /></span>
+        <span class="btn--show-menu"
+          ><img src="images/icon-menu.svg" alt="Open navigation menu"
+        /></span>
+        <div class="overlay"></div>
+        <div class="nav__menu-container">
+          <span class="btn--close-menu"
+            ><img src="images/icon-close-menu.svg" alt="Close navigation menu"
+          /></span>
+          <ul class="nav__links">
+            <li class="nav__item nav__submenu-container nav__submenu-container--collapsed">
+              <a href="#" class="nav__link">Features</a>
+              <ul class="nav__submenu">
+                <li class="nav__sub-link">
+                  <span><img src="images/icon-todo.svg" alt="" /></span> Todo List
+                </li>
+                <li class="nav__sub-link">
+                  <span><img src="images/icon-calendar.svg" alt="" /></span> Calendar
+                </li>
+                <li class="nav__sub-link">
+                  <span><img src="images/icon-reminders.svg" alt="" /></span> Reminders
+                </li>
+                <li class="nav__sub-link">
+                  <span><img src="images/icon-planning.svg" alt="" /></span> Planning
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__submenu-container nav__submenu-container--collapsed">
+              <a href="#" class="nav__link">Company</a>
+              <ul class="nav__submenu">
+                <li class="nav__sub-link">History</li>
+                <li class="nav__sub-link">Our Team</li>
+                <li class="nav__sub-link">Blog</li>
+              </ul>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Careers</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+          </ul>
+          <div class="nav__buttons">
+            <a href="#" class="btn btn--login">Login</a>
+            <a href="#" class="btn btn--register">Register</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <script src="script.js"></script>
+  </body>
+</html>

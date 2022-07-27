@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+:root {
+  --cc-primary: hsl(0, 0%, 8%);
+  --cc-secondary: hsl(0, 0%, 98%);
+  --cc-tertiary: hsl(0, 0%, 41%);
+  --ff-main: "Epilogue", sans-serif;
+  --fw-med: 500;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-main);
+}
+
+body {
+  min-height: 100vh;
+  background: #eee;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mobile Navigation Menu */
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.nav {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+
+.btn--show-menu {
+  margin-left: auto;
+}
+
+.nav__menu-container {
+  background: var(--cc-secondary);
+  color: var(--cc-tertiary);
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: clamp(250px, 70%, 260px);
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  /*   Scroll menu without scrolling page */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn--close-menu {
+  align-self: end;
+}
+
+.nav__item {
+  margin: 30px 0;
+}
+
+.nav__submenu-container,
+.nav__submenu-container--collapsed {
+  position: relative;
+  transition: all ease 0.5s;
+}
+
+.nav__submenu-container::after {
+  transition: all ease 0.5s;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: black;
+  top: 0;
+  right: 55%;
+  transform: translate(50%, 0%);
+  background: url("images/icon-arrow-up.svg") no-repeat center;
+  cursor: pointer;
+}
+
+.nav__submenu-container--collapsed .nav__submenu {
+  display: none;
+}
+
+.nav__submenu-container--collapsed::after {
+  transform: translate(50%, 0%) rotate(180deg);
+}
+
+.nav__submenu {
+  margin-left: 25px;
+  /*   display: none; */
+}
+
+.nav__sub-link {
+  margin: 25px 5px;
+}
+
+.nav__sub-link img {
+  margin-right: 5px;
+}
+
+.nav__buttons {
+  /*   background: #aaa; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+}
+
+.nav__buttons .btn {
+  /*   background: #999; */
+  width: 100%;
+  height: 40px;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.btn--register {
+  border: 1px solid var(--cc-primary);
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    /*     might change */
+    /*     nav needs to be sticky later */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*     background: pink; */
+  }
+  /*   Desktop and Tablet Nav menu */
+  .btn--show-menu,
+  .btn--close-menu,
+  .overlay {
+    display: none;
+  }
+
+  .header {
+    /*     may remove later to make nav sticky */
+    grid-column: 1 / -1;
+    height: fit-content;
+  }
+
+  .nav__menu-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    overflow-y: unset;
+    font-size: 0.9rem;
+    background: transparent;
+  }
+
+  .nav__links {
+    display: flex;
+    width: 50%;
+    align-items: center;
+  }
+
+  .nav__item {
+    margin: 15px 25px;
+  }
+
+  .nav__submenu-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav__submenu-container::after {
+    right: -10px;
+  }
+
+  .nav__submenu {
+    background: white;
+    position: absolute;
+    width: calc(100% + 50px);
+    transform: translateY(35px);
+    border-radius: 5px;
+    line-height: 2.5;
+    padding: 15px;
+    box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav__submenu-container:nth-child(1) > .nav__submenu {
+    right: 0;
+    width: calc(100% + 75px);
+  }
+
+  .nav__sub-link {
+    margin: unset;
+  }
+
+  .nav__buttons {
+    flex-direction: row;
+  }
+}
