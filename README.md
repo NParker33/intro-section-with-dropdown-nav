@@ -32,7 +32,7 @@ Users should be able to:
 
 ## Links
 
-- Live Site - [Frontend Mentor | Intro Section with Navigation Dropdown](https://nparker33.github.io/intro-section-with-dropdown-navigation/)
+- Live Site - [Frontend Mentor | Intro Section with Navigation Dropdown](https://nparker33.github.io/intro-section-with-dropdown-nav/)
 
 ## Author
 
