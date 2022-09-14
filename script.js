@@ -21,13 +21,22 @@ btnOpenMenu.addEventListener("click", function () {
 
 // Closing and opening submenus
 
-navLinks.addEventListener("click", function (e) {
-  e.preventDefault();
-  const subMenuContainer = e.target.parentElement;
-  if (subMenuContainer.classList.contains("nav__submenu-container")) {
-    // Check for click on arrow or features/company
-    console.log("HAS SUBMENU");
-    // Check if submenu is open
-    subMenuContainer.classList.toggle("nav__submenu-container--collapsed");
-  }
+const btnsOpenSubLink = document.querySelectorAll(".nav__icon--arrow");
+
+btnsOpenSubLink.forEach(btn => {
+  btn.addEventListener("click", function () {
+    console.log(btn.parentElement);
+    btn.parentElement.classList.toggle("nav__submenu-container--collapsed");
+  });
 });
+
+/*
+
+To Fix:
+  1) [FIXED] If menu is not open on mobile view, menu doesn't show on desktop view
+  2) [FIXED] Adjust sensitivity on clicking menu tabs
+    2a) Revisit 'bubbling' to add listener to menu instead of individual buttons
+  3) [FIXED] Sub-links need to be links (currently just a list of regular text)
+  4) Correct style of icon arrows on menu items when arrow flips
+
+*/
